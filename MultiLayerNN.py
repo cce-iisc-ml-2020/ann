@@ -23,13 +23,16 @@ def load_csv(filename):
 		for row in csv_reader:
 			if not row:
 				continue
+			#print(row)
 			dataset.append(row)
+
 	return dataset
 
 # Convert string column to float
 def str_column_to_float(dataset, column):
 	for row in dataset:
 		row[column] = float(row[column].strip())
+		#print(row)
 
 # Convert string column to integer
 def str_column_to_int(dataset, column):
@@ -61,7 +64,9 @@ def normalize_dataset(dataset, minmax):
 
 # %%
 def init(inp,out):
+    # Initialize random weights
     return np.random.randn(inp,out)/np.sqrt(inp)
+
 def create_arch(input_layer,first_layer,output_layer,random_seed=0):
     np.random.seed(random_seed)
     layers=X.shape[1],3,1
@@ -146,11 +151,13 @@ def predict(X,weights):
 """
 
 # %%
+# Seed the random number generator
 np.random.seed(0)
+
 coord,cl=make_moons(1000,noise=0.05)
 X,Xt,y,yt=train_test_split(coord,cl,test_size=0.3,random_state=0)
-plt.scatter(X[:,0],X[:,1],s=25,c=y,cmap=plt.cm.Set1)
-plt.show()
+#plt.scatter(X[:,0],X[:,1],s=25,c=y,cmap=plt.cm.Set1)
+#plt.show()
 
 # %%
 """
@@ -160,6 +167,16 @@ plt.show()
 # load and prepare data
 filename = 'wheat-seeds.csv'
 dataset = load_csv(filename)
+print (dataset)
+for i in range(len(dataset[0])):
+	str_column_to_float(dataset, i)
+# convert class column to integers
+#str_column_to_int(dataset, len(dataset[0])-1)
+# normalize input variables
+#minmax = dataset_minmax(dataset)
+#normalize_dataset(dataset, minmax)
+print ("Printing (after normoalization)")
+print (dataset)
 
 # %%
 weights=create_arch(X,3,1)
