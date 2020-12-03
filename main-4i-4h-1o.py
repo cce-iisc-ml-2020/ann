@@ -92,7 +92,7 @@ if __name__ == "__main__":
 								[-3.5895,-6.572,10.5251,-0.16381],
 								[-5.0477,-5.8023,11.244,-0.3901],
 								[-3.5741,3.944,-0.07912,-2.1203]])
-    training_set_outputs = array([[0, 0, 0, 0, 0, 1, 1, 1, 1, 1]]).T
+    training_set_outputs = transpose(array([[0, 0, 0, 0, 0, 1, 1, 1, 1, 1]]))
 
     # Train the neural network using the training set.
     # Do it 60,000 times and make small adjustments each time.
