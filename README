@@ -17,6 +17,10 @@ Kurtosis of Wavelet Transformed image (continuous).
 Entropy of image (continuous).
 Class (0 for authentic, 1 for inauthentic).
 
+# ANN Graph
+Diagram.png (attached)
+4 Inputs, 4 Hidden Layers, 1 Output Layers
+
 # Run: 
 # python3 main-4i-4h-1o.py
 
