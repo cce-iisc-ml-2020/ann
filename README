@@ -8,24 +8,25 @@ functions.
 The Banknote Dataset involves predicting whether a given banknote is authentic 
 given a number of measures taken from a photograph.
 
-It is a binary (2-class) classification problem. There are 1,372 observations 
+It is a binary (2-class) classification problem. There are lot of observations 
 with 4 input variables and 1 output variable. The variable names are as follows:
 
-Variance of Wavelet Transformed image (continuous).
-Skewness of Wavelet Transformed image (continuous).
-Kurtosis of Wavelet Transformed image (continuous).
-Entropy of image (continuous).
-Class (0 for authentic, 1 for inauthentic).
+1. Variance of Wavelet Transformed image (continuous).
+2. Skewness of Wavelet Transformed image (continuous).
+3. Kurtosis of Wavelet Transformed image (continuous).
+4. Entropy of image (continuous).
+
+1. Class (0 for authentic, 1 for inauthentic).
 
 # ANN Graph
 Diagram.png (attached)
-4 Inputs, 4 Hidden Layers, 1 Output Layers
+4 Inputs, 1 Hidden Layer(4 neurons), 1 Output Layer(1 neuron)
 
 # Run: 
-# python3 main-4i-4h-1o.py
+# python3 main-4i-1h-1o.py
 
 --- output ---
-# python3 main-4i-4h-1o.py
+# python3 main-4i-1h-1o.py
 
 Stage 1) Random starting weights: 
 # Layer 1 (4 neurons, each with 4 inputs):
