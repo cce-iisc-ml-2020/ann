@@ -105,6 +105,25 @@ if __name__ == "__main__":
                                 [1.3451,0.23589,-1.8785,1.3258]])
     training_set_outputs = transpose(array([[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0,0,0,0,0,1,1,1,1,1,1]]))
 
+    ''' #This is the handling of csv file read 
+    training_set_inputs = []
+    training_set_outputs = []
+    training_set_outputs_1 = []
+
+    with open('data_banknote_authentication.csv','r') as f:
+        lines = csv.reader(f)
+        for line in lines:
+            #print (str(float(line[0])) + "--" + str(float(line[1])) + "--" + str(float(line[2])) + "--" + str(float(line[3])) + "==" + str(float(line[4])))
+            training_set_inputs.append([float(line[0]), float(line[1]), float(line[2]), float(line[3])])
+            training_set_outputs_1.append(float(line[4]))
+
+    training_set_outputs = transpose(array([training_set_outputs_1]));
+
+    print (training_set_inputs)
+    print (training_set_outputs_1)
+    print (training_set_outputs)
+    '''
+
     # Train the neural network using the training set.
     # Do it 1,000 times and make small adjustments each time.
     neural_network.train(training_set_inputs, training_set_outputs, 1000)
